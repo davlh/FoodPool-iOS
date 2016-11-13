@@ -12,6 +12,10 @@
 		63ACC8781DD6FC6B00FD34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63ACC8761DD6FC6B00FD34C5 /* Main.storyboard */; };
 		63ACC87A1DD6FC6B00FD34C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63ACC8791DD6FC6B00FD34C5 /* Assets.xcassets */; };
 		63ACC87D1DD6FC6B00FD34C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63ACC87B1DD6FC6B00FD34C5 /* LaunchScreen.storyboard */; };
+		63FCDFDD1DD801F600CC5B8E /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FCDFDC1DD801F600CC5B8E /* OrdersViewController.swift */; };
+		63FCDFDF1DD804B400CC5B8E /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FCDFDE1DD804B400CC5B8E /* OrderCell.xib */; };
+		63FCDFE11DD8091100CC5B8E /* OrderCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FCDFE01DD8091100CC5B8E /* OrderCellTableViewCell.swift */; };
+		63FCDFE31DD80BF300CC5B8E /* SendLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FCDFE21DD80BF300CC5B8E /* SendLinkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		63ACC8791DD6FC6B00FD34C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63ACC87C1DD6FC6B00FD34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63ACC87E1DD6FC6B00FD34C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63FCDFDC1DD801F600CC5B8E /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		63FCDFDE1DD804B400CC5B8E /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		63FCDFE01DD8091100CC5B8E /* OrderCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCellTableViewCell.swift; sourceTree = "<group>"; };
+		63FCDFE21DD80BF300CC5B8E /* SendLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendLinkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,11 @@
 			children = (
 				63ACC8721DD6FC6A00FD34C5 /* AppDelegate.swift */,
 				63ACC8741DD6FC6B00FD34C5 /* ViewController.swift */,
+				63FCDFDC1DD801F600CC5B8E /* OrdersViewController.swift */,
+				63FCDFDE1DD804B400CC5B8E /* OrderCell.xib */,
+				63FCDFE01DD8091100CC5B8E /* OrderCellTableViewCell.swift */,
 				63ACC8761DD6FC6B00FD34C5 /* Main.storyboard */,
+				63FCDFE21DD80BF300CC5B8E /* SendLinkViewController.swift */,
 				63ACC8791DD6FC6B00FD34C5 /* Assets.xcassets */,
 				63ACC87B1DD6FC6B00FD34C5 /* LaunchScreen.storyboard */,
 				63ACC87E1DD6FC6B00FD34C5 /* Info.plist */,
@@ -124,6 +136,7 @@
 			files = (
 				63ACC87D1DD6FC6B00FD34C5 /* LaunchScreen.storyboard in Resources */,
 				63ACC87A1DD6FC6B00FD34C5 /* Assets.xcassets in Resources */,
+				63FCDFDF1DD804B400CC5B8E /* OrderCell.xib in Resources */,
 				63ACC8781DD6FC6B00FD34C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				63ACC8751DD6FC6B00FD34C5 /* ViewController.swift in Sources */,
+				63FCDFDD1DD801F600CC5B8E /* OrdersViewController.swift in Sources */,
+				63FCDFE11DD8091100CC5B8E /* OrderCellTableViewCell.swift in Sources */,
 				63ACC8731DD6FC6A00FD34C5 /* AppDelegate.swift in Sources */,
+				63FCDFE31DD80BF300CC5B8E /* SendLinkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

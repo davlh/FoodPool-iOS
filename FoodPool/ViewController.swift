@@ -28,7 +28,7 @@ struct FoodPool {
 class ViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
    
     let restaurantPickerView = UIPickerView()
-    let restaurantNames = ["In N Out", "Chipotle"]
+    let restaurantNames = ["In-N-Out", "Chipotle"]
     @IBOutlet var restaurantTextField: UITextField!
     let timeReturnPickerView = UIDatePicker()
     @IBOutlet var returnTimeTextField: UITextField!
@@ -40,10 +40,13 @@ class ViewController: UITableViewController, UIPickerViewDataSource, UIPickerVie
         restaurantPickerView.dataSource = self
         restaurantPickerView.delegate = self
         restaurantTextField?.inputView = restaurantPickerView
-        timeReturnPickerView.datePickerMode = .DateAndTime
+        timeReturnPickerView.datePickerMode = .Time
         returnTimeTextField?.inputView = timeReturnPickerView
         timeReturnPickerView.addTarget(self, action: "datePickerEdited", forControlEvents: .ValueChanged)
         
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.orangeColor(),
+                NSFontAttributeName: UIFont(name: "Copperplate", size: 21)!]
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -70,11 +73,17 @@ class ViewController: UITableViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     func datePickerEdited() {
-        returnTimeTextField.text = timeReturnPickerView.date.description
-        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .NoStyle
+        dateFormatter.timeStyle = .ShortStyle
+        returnTimeTextField.text = dateFormatter.stringFromDate(timeReturnPickerView.date)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section != 1 {
+            return
+        }
+        
         var foodPool = FoodPool()
         foodPool.restaurant = restaurantTextField?.text
         foodPool.timeOfReturn = timeReturnPickerView.date
@@ -93,8 +102,16 @@ class ViewController: UITableViewController, UIPickerViewDataSource, UIPickerVie
         request.HTTPMethod = "POST"
         
         let task = defaultSession.dataTaskWithRequest(request) { (data, response, error) -> Void in
-            let linkDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:[] )
-            print(linkDictionary)
+            let linkDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options:[] ) as! Dictionary<String, AnyObject>
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                let sendLinkViewControllerInstance = self.storyboard?.instantiateViewControllerWithIdentifier("SendLinkViewControllerID") as! SendLinkViewController
+                sendLinkViewControllerInstance.url = NSURL(string: linkDictionary["order_link"] as! String)
+                sendLinkViewControllerInstance.restaurant = foodPool.restaurant
+                sendLinkViewControllerInstance.returnTime = foodPool.timeOfReturn
+                self.navigationController?.pushViewController(sendLinkViewControllerInstance, animated: true)
+            })
         
         }
         task.resume()

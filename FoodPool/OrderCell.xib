@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="wyW-5j-JEr" customClass="OrderCellTableViewCell" customModule="FoodPool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wyW-5j-JEr" id="fzr-Lx-lsM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adrien Truong (714-388-5687)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Img-01-rEj">
+                        <rect key="frame" x="8" y="11" width="239" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDW-7E-K9f">
+                        <rect key="frame" x="273" y="11" width="39" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 cheeseburger with fries" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uX-En-fzh">
+                        <rect key="frame" x="9" y="36" width="303" height="31"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="leadingMargin" secondItem="Img-01-rEj" secondAttribute="leading" id="9a6-YP-j1X"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3uX-En-fzh" secondAttribute="trailing" id="Lzc-Ou-6hy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3uX-En-fzh" secondAttribute="bottom" constant="-4" id="X8i-Uq-fbf"/>
+                    <constraint firstItem="Img-01-rEj" firstAttribute="top" secondItem="fzr-Lx-lsM" secondAttribute="topMargin" constant="3" id="ZHe-0I-aw1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mDW-7E-K9f" secondAttribute="trailing" id="bqg-L3-3WH"/>
+                    <constraint firstItem="mDW-7E-K9f" firstAttribute="top" secondItem="fzr-Lx-lsM" secondAttribute="topMargin" constant="3" id="iXW-dS-ug2"/>
+                    <constraint firstItem="3uX-En-fzh" firstAttribute="leading" secondItem="fzr-Lx-lsM" secondAttribute="leadingMargin" constant="1" id="kbv-Ig-pAW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameAndPhoneNumberLabel" destination="Img-01-rEj" id="Irw-fl-YIE"/>
+                <outlet property="orderLabel" destination="3uX-En-fzh" id="DR6-AY-kVw"/>
+                <outlet property="priceLabel" destination="mDW-7E-K9f" id="f4G-Ex-UYo"/>
+            </connections>
+            <point key="canvasLocation" x="515" y="360"/>
+        </tableViewCell>
+    </objects>
+</document>
